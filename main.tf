@@ -111,6 +111,8 @@ data "aws_ami" "ubuntu" {
 resource "aws_eip" "hashicat" {
   instance = aws_instance.hashicat.id
   vpc      = true
+  Department = devops
+  Billable = true
 }
 
 resource "aws_eip_association" "hashicat" {
@@ -125,9 +127,7 @@ resource "aws_instance" "hashicat" {
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.hashicat.id
   vpc_security_group_ids      = [aws_security_group.hashicat.id]
-  Department = devops
-  Billable = true
-  
+
   tags = {
     Name = "${var.prefix}-hashicat-instance"
   }
