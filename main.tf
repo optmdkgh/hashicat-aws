@@ -9,7 +9,7 @@ terraform {
 
 provider "aws" {
   region  = var.region
-  Department = devops
+  Department = "devops"
 }
 
 resource "aws_vpc" "hashicat" {
