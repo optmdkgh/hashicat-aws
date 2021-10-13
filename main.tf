@@ -3,14 +3,14 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "=3.42.0"
+      Department = devops
+      Billable = true
     }
   }
 }
 
 provider "aws" {
   region  = var.region
-  Department = devops
-  Billable = true
 }
 
 resource "aws_vpc" "hashicat" {
