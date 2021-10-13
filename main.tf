@@ -3,7 +3,7 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "=3.42.0"
-      Department = devops
+      Department = "devops"
       Billable = true
     }
   }
